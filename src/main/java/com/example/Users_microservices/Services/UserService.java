@@ -27,7 +27,7 @@ public class UserService {
 
     public UserEntity updateUser(Long id, UserEntity newUser) {
         return userRepository.findById(id).map(user -> {
-            user.setUserName(newUser.getUserName());  // Update fields as needed
+            user.setUserName(newUser.getUserName());  // Update fields as neededgit
             user.setEmail(newUser.getEmail());
             return userRepository.save(user);
         }).orElseThrow(() -> new RuntimeException("User not found with id " + id));
